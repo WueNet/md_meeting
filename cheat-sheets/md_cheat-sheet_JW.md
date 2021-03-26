@@ -88,7 +88,7 @@ This is my second paragraph (See source code mode to check out the invisible lin
 
 ```markdown
 ​```markdown
-This is would create a Markdown-Codebox.
+This would create a Markdown-Codebox.
 ​```
 
 This: `here` would create inline code.

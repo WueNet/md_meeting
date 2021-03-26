@@ -114,7 +114,7 @@ This: `here` would create inline code.
 
 
 
-- **Check-Lists** (GitHub Flavored MD): In Github you can create checkboxes with this syntax:
+- **Check-Lists** (GitHub flavored MD): You can create checkboxes with this syntax:
 
 	```
 	- [ ] an empty checkbox

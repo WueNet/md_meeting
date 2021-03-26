@@ -174,12 +174,13 @@ pre code {
 <div id="how-to-start" class="section level2">
 <h2>How to Start</h2>
 <ol style="list-style-type: decimal">
-<li><p>You should have a working version of RStudio (From within RStudio, go to Help &gt; Check for Updates to install newer version of RStudio (if available).)</p></li>
-<li><p>Install and load Rmarkdown with <code>install.packages(&quot;Rmarkdown&quot;)</code> and <code>library(rmarkdown)</code></p></li>
-<li><p>You will be asked to give some information, that information will show up in your YAML header (which is some kind of human readable non-markup format)</p>
+<li>You should have a working version of RStudio (From within RStudio, go to Help &gt; Check for Updates to install newer version of RStudio (if available).)</li>
+<li>Install and load Rmarkdown with <code>install.packages(&quot;Rmarkdown&quot;)</code> and <code>library(rmarkdown)</code></li>
+<li>You will be asked to give some information, that information will show up in your YAML header (which is some kind of human readable non-markup format)
 <ul>
 <li>Important: the header can tell <code>render()</code> what to output –&gt; html for example</li>
 </ul></li>
+<li>Toggle the visual mode if you want.</li>
 </ol>
 </div>
 <div id="basics" class="section level2">
@@ -195,6 +196,7 @@ pre code {
 <li>The difference is, that you can have actual executable code blocks in your R-Markdown file and decide if to render everything, just the results, just the plots or nothing.</li>
 <li>You have to declare a language in a <code>{r}</code> curly brackets syntax for this.</li>
 </ul>
+<!-- -->
 <pre><code>` ```{r, include=True, echo=False}
 # This is an R code block, which will be included in the rendered output file. 
 # ... It would not show the source code but the result/output/plot
@@ -215,6 +217,15 @@ pre code {
 ##  Mean   :15.4   Mean   : 42.98  
 ##  3rd Qu.:19.0   3rd Qu.: 56.00  
 ##  Max.   :25.0   Max.   :120.00</code></pre>
+<pre><code>## # A tibble: 6 x 2
+##   Name     Grade
+##   &lt;chr&gt;    &lt;dbl&gt;
+## 1 Ludwig       1
+## 2 Gottlob      2
+## 3 Angelika     1
+## 4 Irene        2
+## 5 Noam         2
+## 6 Lyn          2</code></pre>
 </div>
 <div id="rendering" class="section level3">
 <h3>Rendering</h3>
@@ -229,6 +240,7 @@ pre code {
 author: &quot;Jakob&quot;
 date: &quot;3/25/2021&quot;
 output: html_document</code></pre></li>
+<li><p>you can write as md_document –&gt; for GitHub, or as pdf_document for GitHub</p></li>
 </ul>
 </div>
 <div id="get-a-tex-file" class="section level3">
@@ -237,6 +249,7 @@ output: html_document</code></pre></li>
 <li><ul>
 <li>For example you can use:</li>
 </ul>
+<!-- -->
 <pre><code>title: &quot;testfile&quot;
 author: &quot;Jakob&quot;
 date: &quot;3/25/2021&quot;

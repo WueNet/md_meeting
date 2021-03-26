@@ -4,34 +4,36 @@ author: "Jakob"
 date: "3/25/2021"
 output: md_document
 ---
+
 ## How to Start
-1. You should have a working version of RStudio (From within RStudio, go to Help > Check for Updates to install newer version of RStudio (if available).)
-  
-2. Install and load Rmarkdown with `install.packages("Rmarkdown")` and `library(rmarkdown)`
 
-3. You will be asked to give some information, that information will show up in your YAML header (which is some kind of human readable non-markup format)
-    - Important: the header can tell `render()` what to output --> html for example
-
+1.  You should have a working version of RStudio (From within RStudio, go to Help \> Check for Updates to install newer version of RStudio (if available).)
+2.  Install and load Rmarkdown with `install.packages("Rmarkdown")` and `library(rmarkdown)`
+3.  You will be asked to give some information, that information will show up in your YAML header (which is some kind of human readable non-markup format)
+    -   Important: the header can tell `render()` what to output --\> html for example
+4.  Toggle the visual mode if you want.
 
 ## Basics
-### Flavor
-Rmarkdown has not the same "flavor" as GitHub Markdown... So unfortunately you will have to use a slightly different syntax for some things.
-- you have to use 4 spaces to indent a list element.
-    
-    
-### Code blocks:
-- create code-blocks as you would do in normal Markdown.
-- The difference is, that you can have actual executable code blocks in your R-Markdown file and decide if to render everything, just the results, just the plots or nothing.
-- You have to declare a language in a ``{r}`` curly brackets syntax for this.
-```{}
-` ```{r, include=True, echo=False}
-# This is an R code block, which will be included in the rendered output file. 
-# ... It would not show the source code but the result/output/plot
-# ... you only need three ``` , the first one is necessary here
-# ... to escape within the actual code block.
-` ```
-```
 
+### Flavor
+
+Rmarkdown has not the same "flavor" as GitHub Markdown... So unfortunately you will have to use a slightly different syntax for some things. - you have to use 4 spaces to indent a list element.
+
+### Code blocks:
+
+-   create code-blocks as you would do in normal Markdown.
+-   The difference is, that you can have actual executable code blocks in your R-Markdown file and decide if to render everything, just the results, just the plots or nothing.
+-   You have to declare a language in a `{r}` curly brackets syntax for this.
+
+```{=html}
+<!-- -->
+```
+    ` ```{r, include=True, echo=False}
+    # This is an R code block, which will be included in the rendered output file. 
+    # ... It would not show the source code but the result/output/plot
+    # ... you only need three ``` , the first one is necessary here
+    # ... to escape within the actual code block.
+    ` ```
 
 You can also embed plots, for example:
 
@@ -47,58 +49,61 @@ library(viridis)
 image(volcano, col = viridis(200, option = "A"))
 ```
 
-
 Or just some table:
+
 ```{r cars}
 summary(cars)
 ```
 
-
-
-### Rendering  
-- Rendering will make a pdf, TeX, HTML, notebook, ... or whatever-you-chose-file from your *.Rmd file.
-    - You can Render from the command line (or from an R code block) with ``render(markdownfile.Rmd)`
-    - To render your current Rmd File, use the shortcut: SHIFT+command+K (macOS) or CTRL+SHIFT+K (Windows)
-- Now the Header comes in handy, we can tell it to make a Html document by writing:
-  ```{}
-  title: "testfile"
-  author: "Jakob"
-  date: "3/25/2021"
-  output: html_document
+```{r, echo=FALSE, message=FALSE}
+# we have to add: 
+source("script.R", local = knitr::knit_global())
+# variables from another script
+# paste(v1)
+# library(tidyverse)
+print(tibble(Name = v2, Grade = v1))
 ```
 
+### Rendering
 
+-   Rendering will make a pdf, TeX, HTML, notebook, ... or whatever-you-chose-file from your \*.Rmd file.
+
+    -   You can Render from the command line (or from an R code block) with \``render(markdownfile.Rmd)`
+    -   To render your current Rmd File, use the shortcut: SHIFT+command+K (macOS) or CTRL+SHIFT+K (Windows)
+
+-   Now the Header comes in handy, we can tell it to make a Html document by writing:
+
+        title: "testfile"
+        author: "Jakob"
+        date: "3/25/2021"
+        output: html_document
+
+-   you can write as md_document --\> for GitHub, or as pdf_document for GitHub
 
 ### get a TeX file
-4. 
-    - For example you can use:
-```{}
-title: "testfile"
-author: "Jakob"
-date: "3/25/2021"
-output:
-    pdf_document:
-        keep_tex: true
-        citation_package: biblatex
-bibliography: bibliography.bib
-```
 
+4.  
+
+    -   For example you can use:
+
+    ```{=html}
+    <!-- -->
+    ```
+        title: "testfile"
+        author: "Jakob"
+        date: "3/25/2021"
+        output:
+         pdf_document:
+             keep_tex: true
+             citation_package: biblatex
+        bibliography: bibliography.bib
 
 ### Math Block
-- as you know it from Markdown
-$$
-\longrightarrow c_1 + c_2*h \Sigma^{top}_{bottom}
-$$
 
-
+-   as you know it from Markdown $$
+    \longrightarrow c_1 + c_2*h \Sigma^{top}_{bottom}
+    $$
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
-
-
-
-
-
-
-

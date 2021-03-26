@@ -3,16 +3,14 @@
 1.  You should have a working version of RStudio (From within RStudio,
     go to Help &gt; Check for Updates to install newer version of
     RStudio (if available).)
-
 2.  Install and load Rmarkdown with `install.packages("Rmarkdown")` and
     `library(rmarkdown)`
-
 3.  You will be asked to give some information, that information will
     show up in your YAML header (which is some kind of human readable
     non-markup format)
-
     -   Important: the header can tell `render()` what to output –&gt;
         html for example
+4.  Toggle the visual mode if you want.
 
 ## Basics
 
@@ -63,6 +61,16 @@ Or just some table:
     ##  3rd Qu.:19.0   3rd Qu.: 56.00  
     ##  Max.   :25.0   Max.   :120.00
 
+    ## # A tibble: 6 x 2
+    ##   Name     Grade
+    ##   <chr>    <dbl>
+    ## 1 Ludwig       1
+    ## 2 Gottlob      2
+    ## 3 Angelika     1
+    ## 4 Irene        2
+    ## 5 Noam         2
+    ## 6 Lyn          2
+
 ### Rendering
 
 -   Rendering will make a pdf, TeX, HTML, notebook, … or
@@ -80,6 +88,9 @@ Or just some table:
         author: "Jakob"
         date: "3/25/2021"
         output: html_document
+
+-   you can write as md\_document –&gt; for GitHub, or as pdf\_document
+    for GitHub
 
 ### get a TeX file
 

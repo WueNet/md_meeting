@@ -2,7 +2,7 @@
 title: "testfile"
 author: "Jakob"
 date: "3/25/2021"
-output: html_document
+output: md_document
 ---
 ## How to Start
 1. You should have a working version of RStudio (From within RStudio, go to Help > Check for Updates to install newer version of RStudio (if available).)

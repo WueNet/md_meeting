@@ -1,15 +1,17 @@
-# Markdown Cheat Sheet
+# Markdown Cheat-Sheet
+
+<a style="background-color:yellow;color:black">This file was created in typora, it won't look as good in GitHub Markdown.</a>   
 
 
 
 ## 1. What is Markdown?
 
-- Markdown is a simple lay-out syntax that can easily be transposed into HTML or be rendered. You can think of it as easy-peasy-mini-HTML but without doing actual markup stuff (i.e., using tags as in HTML or XML (or TeX))
+- Markdown is a simple lay-out syntax that can easily  be rendered or transposed into HTML. You can think of it as easy-peasy-mini-HTML but without doing actual markup stuff (i.e., using tags as in HTML or XML (or TeX))
 	- Recognized by a lot of Webbrowsers / websites
 	- Used in the computational communities, e.g., Stack-Overflow or GitHub
 	- Most markdown editors or webpages except HTML as well, when rendering a markdown file. 
 - Why you should use (and to some extend embrace Markdown):
-	- It is implemented in a lot of editors an webpages and gets more popular by the day.
+	- It is implemented in a lot of editors and webpages and gets more popular by the day.
 	- Because its simplicity, it will soon enough be translatable to all your favorite text layout programs
 		- Already compatible with HTML and TeX/LaTeX 
 	- It is super lightweight, simple and open source: You can write plain markdown "source code" in any text editor and it will still be pretty readable.
@@ -58,14 +60,8 @@ This is my second paragraph (See source code mode to check out the invisible lin
 
 **Example**
 
-- I separate my bullet points with `<br>`.<br>  
+- I separate my bullet points with (doesn't work in Github) `<br>`.<br>  
 	- This only worked because of the double space after the ``<br>`` tag.
-
-
-
-
-
-
 
 
 
@@ -88,11 +84,17 @@ This is my second paragraph (See source code mode to check out the invisible lin
 ##### 2.1.1.3. Code Highlighting
 
 - For inline code use simple \` around the text, that you want to write as code.
+- For code boxes use three \` and the programming language you want to highlight.
+
+```markdown
+​```markdown
+This is would create a Markdown-Codebox.
+​```
+
+This: `here` would create inline code.
+```
 
 
-
-- [x]
-- 
 
 
 
@@ -102,6 +104,23 @@ This is my second paragraph (See source code mode to check out the invisible lin
 	- But since minus (`-`) is popular in other editors as well and asterisk is also used for italics, I recommend sticking with ``-``.
 	- You can add a deeper level with tab or two spaces.
 - **Ordered Lists**: 
+	- You can use any kind of 1., a., etc. instead of the above examples to create an ordered list. The most useful feature here is, that you don't have to specify the numeration, you could just always write `1.` For all list elements in all levels and markdown will render it perfectly into numbered lists.  You can also combine ordered and unordered lists (check out source code):
+
+1. one
+1. two
+	1. Another level
+		* third level with unordered bullet points
+		* third level with unordered bullet points
+
+
+
+- **Check-Lists** (GitHub Flavored MD): In Github you can create checkboxes with this syntax:
+
+	```
+	- [ ] an empty checkbox
+	- [x] a checked checkbox
+	```
+
 
 
 
@@ -161,11 +180,91 @@ Syntax: **``[visible link](Address)``**
 
 
 
-### 2.1.5. Code Highlighting
+### 2.1.5. HTML in Markdown
+
+- There are differences in what HTML is rendered by e.g., GitHub Markdown vs. Typora's Markdown.
+	- For example, Github doesn't accept the color-options in a style parameter like ``<a style="color:pink">colored text</a>``.
+- Generally speaking, a lot of simple HTML coding is correctly rendered by most markdown programs.
+- Here I represent three example of HTML in a Markdown-file which I found quite helpfull.
+	- Tip: use ``<div>`` to trigger a HTML-block in Typora
+
+
+
+##### 2.1.5.1. Images
+
+- I like to use the image tag to place and scale my images in a markdown file.
+
+	- e.g., the following code produces the below output:
+
+		```html
+		<div>
+			<img src="cropped-leibnizdream-logo3-2.png" style="margin-left:10%;margin-right:60%;width:30%">
+		  		<figcaption style="margin-left:15%;margin-right:65%"><i>Figure:</i> LeibnizDream Logo looks nice</figcaption>
+			</img>
+		</div>
+		```
+
+<div>
+		<img src="cropped-leibnizdream-logo3-2.png" style="margin-left:10%;margin-right:60%;width:30%">
+  		<figcaption style="margin-left:15%;margin-right:65%"><i>Figure:</i> LeibnizDream Logo looks nice</figcaption>
+	</img>
+</div>
+
+
+
+##### 2.1.5.2. Preserve
+
+- Another useful tag is ``<pre>`` if you want to keep the output. You can combine it with the font-tag to have, e.g., a mono-space font.
+
+	- Attention: not all fonts are supported in all Markdown Programms / Editors.
+
+	- e.g., the following code produces the below output:
+
+		```html
+		<pre><font face="Courier New">
+		This			will			keep				all 			
+					my				white			space
+							as					typed
+										!
+		</font></pre>
+		```
+
+		<pre><font face="Courier New">
+		This			will			keep				all 			
+					my				white			space
+							as					typed
+										!
+		</font></pre>
+
+		
+
+
+##### 2.1.5.3. links etc.
 
 
 
 
 
-### 2.2. Useful Keyboard Shortcuts
+### 2.1.6. Math Mode
+
+$$
+‎\cos x‎ ‎=‎ ‎‎\sum_{n=0}^{\infty} ‎\frac{(ix)^{2n‎}}{(2n)!}‎‎
+$$
+
+
+$$
+\ new\ math\ block
+$$
+
+$$
+\mathrm{[[the]_D\ man_N]_{NP}}
+$$
+
+
+
+
+
+
+
+## 2.2. Useful Keyboard Shortcuts
 

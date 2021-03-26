@@ -120,7 +120,8 @@ This: `here` would create inline code.
 	- [ ] an empty checkbox
 	- [x] a checked checkbox
 	```
-
+- [ ] empty checkbox
+- [x] a checked checkbox 
 
 
 

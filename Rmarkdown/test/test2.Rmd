@@ -1,0 +1,41 @@
+---
+title: "test2"
+author: "Jakob"
+date: "3/26/2021"
+output: md_document
+---
+
+## Basics
+
+-   How to render:
+    -   `render(markdown_filename.rmd)`
+    -   SHIFT command K
+    -   like in Typora
+
+@SauerlandAlexiadou2020
+
+
+```{r, echo=FALSE, message=FALSE}
+source("script.R", local = knitr::knit_global())
+print(tibble(Name = v2, Grade = v1))
+
+paste(tibble(name=v1, grade=v2))
+```
+
+
+```{r cars}
+summary(cars)
+```
+
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+
+```{python}
+a = {"hallo":"HALLLO"}
+```
+
+
+
